@@ -7,15 +7,13 @@ window.onload=function(){
     search.addEventListener("click",function(){
         var textbox= document.getElementById("searchbox").value;
         request = new XMLHttpRequest();
-        var definitionURL= 'request.php?q='+textbox;
+        var definitionURL= 'request.php?q=definition';
         request.onreadystatechange=function(){
             if (request.readyState===request.DONE){
                 if (request.status===200){
                     var response=request.responseText;
-                    console.log(request.responseText);
-                    Result.innerHTML=response;
-                    
-                    //alert(response);
+                    console.log(response);
+                    alert(response);
                 }
                 if(request.status===404){
                     console.log("Result not found.");
